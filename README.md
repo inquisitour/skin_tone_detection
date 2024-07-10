@@ -1,4 +1,4 @@
-# Skin Tone Detection Project
+# Skin Tone Detection
 
 This project implements a robust skin tone detection system using deep learning techniques and the Deepgaze library.
 
