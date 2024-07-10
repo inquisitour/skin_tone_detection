@@ -16,7 +16,7 @@ Thank you for considering contributing to the Skin Tone Detection Project! We we
 
 ## Code of Conduct
 
-This project adheres to the Contributor Covenant Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to [your-email@example.com].
+This project adheres to the Contributor Covenant Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to [deshmukhpratik931@gmail.com].
 
 ## How Can I Contribute?
 
@@ -24,8 +24,9 @@ This project adheres to the Contributor Covenant Code of Conduct. By participati
 
 If you encounter a bug in the project, please help us by reporting it. Use the following steps:
 
-1. Ensure the bug was not already reported by searching on the [issues page](https://github.com/your-repo/issues).
-2. If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/your-repo/issues/new). Be sure to include:
+1. Ensure the bug was not already reported by searching on the [issues page](https://github.com/inquisitour/skin_tone_detection/issues).
+2. If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/inquisitour/skin_tone_detection/issues/new).
+3. Be sure to include:
    - A descriptive title.
    - A detailed description of the bug.
    - Steps to reproduce the bug.
@@ -35,8 +36,8 @@ If you encounter a bug in the project, please help us by reporting it. Use the f
 
 If you have an idea to improve the project, we'd love to hear it! To suggest an enhancement:
 
-1. Check if the feature request already exists on the [issues page](https://github.com/your-repo/issues).
-2. If not, [create a new issue](https://github.com/your-repo/issues/new) and provide:
+1. Check if the feature request already exists on the [issues page](https://github.com/inquisitour/skin_tone_detection/issues).
+2. If not, [create a new issue](https://github.com/inquisitour/skin_tone_detection/issues/new) and provide:
    - A clear and descriptive title.
    - A detailed description of the proposed enhancement.
    - Any supporting material or context.
@@ -48,7 +49,7 @@ We welcome and appreciate your pull requests. Follow these steps to submit one:
 1. Fork the repository to your own GitHub account.
 2. Clone the project to your local machine:
    ```
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/inquisitour/skin_tone_detection.git
    ```
 3. Create a new branch for your changes:
    ```
