@@ -19,7 +19,7 @@ This project implements a robust skin tone detection system using deep learning 
 4. Evaluate the model: `python evaluate.py`
 5. Make predictions: `python predict.py`
 
-For detailed instructions, refer to the [Step-by-Step Guide](path/to/README.md).
+For detailed instructions, refer to the [Step-by-Step Guide](guide.md).
 
 ## Project Structure
 
