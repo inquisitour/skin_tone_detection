@@ -18,7 +18,7 @@
   </a>
 </p>
 
-This project implements a robust and adaptive skin tone detection system using cutting-edge deep learning techniques in combination with the DeepGaze library.
+This project implements a robust and adaptive skin tone detection system using cutting-edge deep learning techniques in combination with the DeepGaze library. Our approach integrates computer vision and machine learning to accurately identify and classify various skin tones in images. By leveraging the power of Convolutional Neural Networks (CNNs) and the specialized capabilities of DeepGaze, we've created a system that can reliably detect skin areas and categorize them into distinct tone categories.
 
 <p align="center">
   <img src="SkinToneArch.png" alt="System Architecture" width="700">
