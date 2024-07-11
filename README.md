@@ -102,10 +102,6 @@ We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) 
 
 Check out our [Improvement Plan](plan.md) for future enhancements!
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 <p align="center">
