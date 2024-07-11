@@ -19,7 +19,7 @@ This project implements a robust and adaptive skin tone detection system using c
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/inquisitour/skin-tone-detection.git
+   git clone https://github.com/inquisitour/skin_tone_detection.git
    cd skin-tone-detection
    ```
 
