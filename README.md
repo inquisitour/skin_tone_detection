@@ -1,4 +1,4 @@
-# 🎨 Skin Tone Detection System
+# 🎨 Skin Tone Detection
 
 <p align="center">
   <a href="https://github.com/inquisitour/skin_tone_detection/actions/workflows/pre-commit.yml">
