@@ -1,7 +1,6 @@
-
 # Step-by-Step Guide for Skin Tone Detection Project
 
-This guide will walk you through the process of setting up, running, and evaluating the skin tone detection project.
+This guide will walk you through the process of setting up, running, and evaluating the skin tone detection project that combines DeepGaze and a custom CNN model.
 
 ## 1. Environment Setup
 
@@ -28,16 +27,16 @@ This guide will walk you through the process of setting up, running, and evaluat
    ```
    data/raw/
    ├── black/
-   │   ├── image1.jpg
-   │   ├── image2.jpg
+   │   ├── image1.jpg.chip
+   │   ├── image2.jpg.chip
    │   └── ...
    ├── brown/
-   │   ├── image1.jpg
-   │   ├── image2.jpg
+   │   ├── image1.jpg.chip
+   │   ├── image2.jpg.chip
    │   └── ...
    └── white/
-       ├── image1.jpg
-       ├── image2.jpg
+       ├── image1.jpg.chip
+       ├── image2.jpg.chip
        └── ...
    ```
 
@@ -47,7 +46,11 @@ This guide will walk you through the process of setting up, running, and evaluat
    ```
    python data/data_preprocessing.py
    ```
-2. This will load, preprocess, and split the data into training, validation, and test sets.
+2. This script will:
+   - Load images from the raw data directory
+   - Use DeepGaze to detect skin areas in each image
+   - Preprocess the skin-detected areas for CNN input
+   - Split the data into training, validation, and test sets
 3. Verify that the script runs without errors and prints the shapes of the datasets.
 
 ## 4. Model Training
@@ -56,7 +59,7 @@ This guide will walk you through the process of setting up, running, and evaluat
    ```
    python train.py
    ```
-2. The script will train the model using the preprocessed data.
+2. The script will train the CNN model using the preprocessed data.
 3. Monitor the console output for training progress, including loss and accuracy for each epoch.
 4. The best model will be saved in the `models/saved_models` directory.
 
@@ -77,23 +80,26 @@ This guide will walk you through the process of setting up, running, and evaluat
    python predict.py
    ```
 2. When prompted, enter the path to an image file.
-3. The script will display the predicted skin tone and show a visualization of the detected skin areas.
+3. The script will:
+   - Use DeepGaze to detect skin areas in the input image
+   - Apply the trained CNN model to classify the skin tone
+   - Display the predicted skin tone and show a visualization of the detected skin areas
 
 ## 7. Experimenting with the Project
 
 To experiment with the current setup:
 
-1. **Modify hyperparameters**: Open `config.py` and adjust parameters like `IMAGE_SIZE`, `BATCH_SIZE`, `EPOCHS`, or `LEARNING_RATE`. Retrain the model to see how these changes affect performance.
+1. **Adjust DeepGaze parameters**: Modify the skin detection threshold in `utils/image_utils.py` to see how it affects the overall system performance.
 
-2. **Try different model architectures**: Modify `models/cnn_model.py` to experiment with different network structures or base models (e.g., ResNet, EfficientNet).
+2. **Modify CNN architecture**: Experiment with different network structures in `models/cnn_model.py`.
 
 3. **Enhance data preprocessing**: Add data augmentation techniques in `data/data_preprocessing.py` to improve model robustness.
 
-4. **Analyze model performance**: After each training run, compare the evaluation results to understand how your changes impact the model's effectiveness across different skin tones.
+4. **Fine-tune hyperparameters**: Adjust learning rate, batch size, or number of epochs in `config.py`.
 
-5. **Test with diverse images**: Use `predict.py` with a variety of images to assess the model's performance in real-world scenarios.
+5. **Analyze model performance**: After each training run, compare the evaluation results to understand how your changes impact the model's effectiveness across different skin tones.
 
-6. **Fine-tune the skin detection**: Adjust the skin detection parameters in `utils/image_utils.py` to improve the accuracy of skin area identification.
+6. **Test with diverse images**: Use `predict.py` with a variety of images to assess the system's performance in real-world scenarios.
 
 Remember to document your experiments, noting any changes made and their impacts on model performance. This will help guide further improvements to the project.
 
@@ -103,4 +109,4 @@ Remember to document your experiments, noting any changes made and their impacts
 - For CUDA-related errors, verify that your TensorFlow installation is compatible with your GPU drivers.
 - If you face memory issues during training, try reducing the `BATCH_SIZE` in `config.py`.
 
-For any other issues, refer to the documentation of the libraries used (TensorFlow, OpenCV, Deepgaze) or seek help in their respective community forums.
+For any other issues, refer to the documentation of the libraries used (TensorFlow, OpenCV, DeepGaze) or seek help in their respective community forums.

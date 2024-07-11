@@ -5,21 +5,30 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 from config import RAW_DATA_DIR, PROCESSED_DATA_DIR, IMAGE_SIZE, SKIN_TONE_CLASSES
+from deepgaze.color_detection import SkinDetector
 
 def load_and_preprocess_data():
     images = []
     labels = []
+    skin_detector = SkinDetector()
     
     for class_index, class_name in enumerate(SKIN_TONE_CLASSES):
         class_dir = os.path.join(RAW_DATA_DIR, class_name)
         for image_name in os.listdir(class_dir):
-            if image_name.endswith('.jpg.chip'):  # Make sure processing the correct files
+            if image_name.endswith('.jpg.chip'):
                 image_path = os.path.join(class_dir, image_name)
                 image = cv2.imread(image_path)
                 if image is not None:
                     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                    image = cv2.resize(image, IMAGE_SIZE)
-                    images.append(image)
+                    
+                    # Use DeepGaze to detect skin
+                    skin_mask = skin_detector.returnMask(image)
+                    skin_image = cv2.bitwise_and(image, image, mask=skin_mask)
+                    
+                    # Resize the skin image
+                    skin_image = cv2.resize(skin_image, IMAGE_SIZE)
+                    
+                    images.append(skin_image)
                     labels.append(class_index)
                 else:
                     print(f"Warning: Could not read image {image_path}")

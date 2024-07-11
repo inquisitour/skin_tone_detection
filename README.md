@@ -1,6 +1,6 @@
 # Skin Tone Detection
 
-This project implements a robust skin tone detection system using deep learning techniques and the Deepgaze library.
+This project implements a robust and adaptive skin tone detection system using deep learning techniques in combination with the DeepGaze library.
 
 ## Setup and Installation
 
@@ -8,8 +8,14 @@ This project implements a robust skin tone detection system using deep learning 
 2. Create a virtual environment: `python -m venv venv`
 3. Activate the virtual environment:
    - Windows: `venv\Scripts\activate`
-   - Unix or MacOS: `source venv/bin/activate`
+   - Unix or macOS: `source venv/bin/activate`
 4. Install the required packages: `pip install -r requirements.txt`
+
+## Key Features
+
+- Utilizes DeepGaze for initial skin detection
+- Employs a CNN model for accurate skin tone classification
+- Supports multiple skin tone categories (black, brown, white)
 
 ## Usage
 
@@ -31,9 +37,17 @@ For detailed instructions, refer to the [Step-by-Step Guide](guide.md).
 - `predict.py`: Script for making predictions on new images
 - `evaluate.py`: Script for evaluating the model's performance
 
+## System Architecture
+
+1. Skin Detection: DeepGaze library is used for initial skin area detection
+2. Feature Extraction & Classification: Custom CNN model for skin tone classification
+3. Post-processing: Combining DeepGaze skin mask with CNN predictions for final output
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+Further improvement [plan](plan.md).
 
 ## License
 
