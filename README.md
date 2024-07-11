@@ -43,19 +43,19 @@ This project implements a robust and adaptive skin tone detection system using c
    python -m venv venv
    ```
 
-  # Activate the virtual environment:
+  ## Activate the virtual environment:
 
-    # On Windows:
+  ## On Windows:
     ```bash
     venv\Scripts\activate
     ```
 
-    # On Unix or macOS:
+  ## On Unix or macOS:
     ```bash
     source venv/bin/activate
     ```
-    
-    # Install required packages:
+
+  ## Install required packages:
     ```bash
     pip install -r requirements.txt
     ```
