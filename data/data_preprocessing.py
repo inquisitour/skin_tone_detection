@@ -13,12 +13,16 @@ def load_and_preprocess_data():
     for class_index, class_name in enumerate(SKIN_TONE_CLASSES):
         class_dir = os.path.join(RAW_DATA_DIR, class_name)
         for image_name in os.listdir(class_dir):
-            image_path = os.path.join(class_dir, image_name)
-            image = cv2.imread(image_path)
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-            image = cv2.resize(image, IMAGE_SIZE)
-            images.append(image)
-            labels.append(class_index)
+            if image_name.endswith('.jpg.chip'):  # Make sure processing the correct files
+                image_path = os.path.join(class_dir, image_name)
+                image = cv2.imread(image_path)
+                if image is not None:
+                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                    image = cv2.resize(image, IMAGE_SIZE)
+                    images.append(image)
+                    labels.append(class_index)
+                else:
+                    print(f"Warning: Could not read image {image_path}")
     
     images = np.array(images) / 255.0
     labels = to_categorical(np.array(labels), num_classes=len(SKIN_TONE_CLASSES))
