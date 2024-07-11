@@ -1,6 +1,6 @@
 # 🎨 Skin Tone Detection System
 
-![GitHub](https://img.shields.io/github/license/inquisitour/skin-tone-detection)
+![GitHub](https://img.shields.io/github/license/inquisitour/skin_tone_detection)
 ![Python](https://img.shields.io/badge/python-3.7%2B-blue)
 
 This project implements a robust and adaptive skin tone detection system using cutting-edge deep learning techniques in combination with the DeepGaze library.
