@@ -1,4 +1,4 @@
-# Updated Step-by-Step Guide for Skin Tone Detection Project
+# Step-by-Step Guide for Skin Tone Detection Project
 
 This guide walks you through the process of setting up, running, and evaluating the skin tone detection project that combines DeepGaze and a custom CNN model.
 
