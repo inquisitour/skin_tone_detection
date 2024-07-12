@@ -73,6 +73,7 @@ For detailed instructions, check out our [Step-by-Step Guide](guide.md) 📚
 ```
 skin-tone-detection/
 │
+├── audit/              # Specific audit tasks
 ├── data/               # Raw and processed data
 ├── models/             # CNN model architecture
 ├── config.py           # Configuration settings

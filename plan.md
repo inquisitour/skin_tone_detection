@@ -2,6 +2,40 @@
 
 Given the current performance issues, particularly the model's bias towards the "white" category and its failure to distinguish between different skin tones, this plan outlines a detailed approach to improve our skin tone detection system.
 
+## Phase 0: Comprehensive Audit (Ongoing)
+
+1. Setup Audit Infrastructure:
+   - Create an 'audit' folder in the project directory.
+   - Develop separate scripts for each audit component (data, model, config, etc.).
+
+2. Data Audit:
+   - Implement thorough data quality checks.
+   - Analyze class distribution and image quality.
+
+3. Model Architecture Audit:
+   - Review current model architecture for potential limitations.
+   - Identify areas for improvement in model design.
+
+4. Configuration and Training Process Audit:
+   - Analyze hyperparameters and training script for potential issues.
+   - Identify any hardcoded values or biases in the configuration.
+
+5. Prediction and Evaluation Audit:
+   - Review prediction script for robustness and error handling.
+   - Assess current evaluation metrics and their effectiveness.
+
+6. Documentation and Integration Audit:
+   - Review project documentation for completeness and clarity.
+   - Assess overall system integration and consistency.
+
+7. Comparative Analysis:
+   - Implement a process for testing the model on diverse skin tone images.
+   - Analyze performance discrepancies across different skin tones.
+
+8. Audit Reporting:
+   - Develop a comprehensive audit report generation system.
+   - Use insights from the audit to inform subsequent improvement phases.
+
 ## Phase 1: Data Analysis and Preprocessing Enhancement
 
 1. Dataset Audit:
@@ -118,6 +152,7 @@ Given the current performance issues, particularly the model's bias towards the 
 
 ## Implementation Timeline
 
+- Phase 0: 2-3 weeks
 - Phase 1: 2-3 weeks
 - Phase 2: 3-4 weeks
 - Phase 3: 2-3 weeks
@@ -138,4 +173,7 @@ Throughout this improvement process, regularly evaluate the model using:
 ## Conclusion
 
 This comprehensive plan addresses the current limitations of our skin tone detection model, focusing on data quality, model architecture, training processes, and advanced techniques. By systematically working through these phases, we aim to significantly improve the model's ability to accurately classify different skin tones while minimizing bias and enhancing overall performance.
+
+UPDATE: This comprehensive plan now includes a thorough audit phase, addressing potential issues early in the improvement process. By starting with a detailed audit, we can more effectively target our efforts in subsequent phases, ensuring a more robust and unbiased skin tone detection model. The audit process will provide valuable insights that will inform and guide our data preprocessing, model architecture optimization, training refinement, and advanced analysis techniques.
+
 
