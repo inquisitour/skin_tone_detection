@@ -38,28 +38,23 @@ Given the current performance issues, particularly the model's bias towards the 
 
 ## Phase 1: Data Analysis and Preprocessing Enhancement
 
-1. Dataset Audit:
-   - Conduct a thorough review of the entire dataset.
-   - Ensure equal representation of all skin tones (black, brown, white).
-   - Identify and remove any mislabeled or poor-quality images.
-
-2. Skin Detection Algorithm Refinement:
+1. Skin Detection Algorithm Refinement:
    - Review the DeepGaze skin detection parameters in `config.py`.
    - Experiment with different HSV range values for `MIN_SKIN_RANGE` and `MAX_SKIN_RANGE`.
    - Implement adaptive thresholding techniques to account for varying lighting conditions.
 
-3. Data Augmentation Enhancement:
+2. Data Augmentation Enhancement:
    - Implement advanced augmentation techniques specific to skin tone images:
      - Brightness and contrast adjustments
      - Hue and saturation shifts (within reasonable limits for skin tones)
      - Random cropping and zooming
    - Use the `albumentations` library for efficient and diverse augmentations.
 
-4. Create Balanced Dataset:
+3. Create Balanced Dataset:
    - Implement oversampling of underrepresented classes using techniques like SMOTE (Synthetic Minority Over-sampling Technique).
    - Alternatively, use weighted sampling during batch generation to ensure equal representation.
 
-5. Feature Extraction Validation:
+4. Feature Extraction Validation:
    - Manually inspect the preprocessed images after skin detection and augmentation.
    - Ensure that the skin tone information is preserved and distinguishable across different categories.
 
