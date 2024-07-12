@@ -1,6 +1,6 @@
-# Step-by-Step Guide for Skin Tone Detection Project
+# Updated Step-by-Step Guide for Skin Tone Detection Project
 
-This guide will walk you through the process of setting up, running, and evaluating the skin tone detection project that combines DeepGaze and a custom CNN model.
+This guide walks you through the process of setting up, running, and evaluating the skin tone detection project that combines DeepGaze and a custom CNN model.
 
 ## 1. Environment Setup
 
@@ -27,86 +27,101 @@ This guide will walk you through the process of setting up, running, and evaluat
    ```
    data/raw/
    ├── black/
-   │   ├── image1.jpg.chip
-   │   ├── image2.jpg.chip
+   │   ├── image1.jpg
+   │   ├── image2.jpg
    │   └── ...
    ├── brown/
-   │   ├── image1.jpg.chip
-   │   ├── image2.jpg.chip
+   │   ├── image1.jpg
+   │   ├── image2.jpg
    │   └── ...
    └── white/
-       ├── image1.jpg.chip
-       ├── image2.jpg.chip
+       ├── image1.jpg
+       ├── image2.jpg
        └── ...
    ```
 
 ## 3. Data Preprocessing
 
-1. Run the data preprocessing script:
+1. Review and adjust the skin detection parameters in `config.py` if necessary.
+2. Run the data preprocessing script:
    ```
    python data/data_preprocessing.py
    ```
-2. This script will:
+3. This script will:
    - Load images from the raw data directory
    - Use DeepGaze to detect skin areas in each image
    - Preprocess the skin-detected areas for CNN input
    - Split the data into training, validation, and test sets
-3. Verify that the script runs without errors and prints the shapes of the datasets.
+4. Verify that the script runs without errors and prints the shapes of the datasets.
+5. Manually inspect some preprocessed images to ensure correct skin detection.
 
-## 4. Model Training
+## 4. Model Architecture
 
-1. Start the model training process:
+1. Review the CNN model architecture in `models/cnn_model.py`.
+2. Consider starting with a simpler architecture if facing performance issues.
+3. Implement data augmentation techniques in the model or data loading process.
+
+## 5. Model Training
+
+1. Adjust hyperparameters in `config.py` if needed (learning rates, batch size, epochs).
+2. Start the model training process:
    ```
    python train.py
    ```
-2. The script will train the CNN model using the preprocessed data.
 3. Monitor the console output for training progress, including loss and accuracy for each epoch.
-4. The best model will be saved in the `models/saved_models` directory.
+4. After training, examine the generated training history plot.
 
-## 5. Model Evaluation
+## 6. Model Evaluation
 
-1. After training, evaluate the model's performance:
+1. Run the evaluation script:
    ```
    python evaluate.py
    ```
-2. This script will load the best model and evaluate it on the test set.
-3. Review the printed classification report, which includes precision, recall, and F1-score for each class.
-4. Examine the confusion matrix visualization to understand the model's performance across different skin tones.
+2. Review the printed classification report, which includes precision, recall, and F1-score for each class.
+3. Examine the confusion matrix visualization to understand the model's performance across different skin tones.
+4. If the model shows poor performance (e.g., heavy bias towards one class):
+   - Check for class imbalance in your dataset
+   - Review preprocessing steps for potential biases
+   - Consider implementing class weighting or oversampling techniques
 
-## 6. Making Predictions
+## 7. Improving Model Performance
 
-1. To test the model on new images, run:
-   ```
-   python predict.py
-   ```
-2. When prompted, enter the path to an image file.
-3. The script will:
-   - Use DeepGaze to detect skin areas in the input image
-   - Apply the trained CNN model to classify the skin tone
-   - Display the predicted skin tone and show a visualization of the detected skin areas
+If the model's performance is unsatisfactory:
 
-## 7. Experimenting with the Project
+1. Data Quality:
+   - Ensure your dataset is diverse and correctly labeled
+   - Add more varied samples if certain classes are underrepresented
 
-To experiment with the current setup:
+2. Preprocessing:
+   - Fine-tune the skin detection algorithm to reduce potential biases
+   - Implement additional data augmentation techniques
 
-1. **Adjust DeepGaze parameters**: Modify the skin detection threshold in `utils/image_utils.py` to see how it affects the overall system performance.
+3. Model Architecture:
+   - Experiment with different CNN architectures
+   - Consider using transfer learning with pre-trained models
 
-2. **Modify CNN architecture**: Experiment with different network structures in `models/cnn_model.py`.
+4. Training Process:
+   - Adjust learning rates, potentially using learning rate schedules
+   - Implement regularization techniques (e.g., dropout, L2 regularization)
+   - Use techniques like gradient clipping to handle potential instability
 
-3. **Enhance data preprocessing**: Add data augmentation techniques in `data/data_preprocessing.py` to improve model robustness.
+5. Balanced Learning:
+   - Implement class weighting in the loss function
+   - Use oversampling or undersampling techniques for imbalanced classes
 
-4. **Fine-tune hyperparameters**: Adjust learning rate, batch size, or number of epochs in `config.py`.
+6. Feature Visualization:
+   - Implement techniques like activation maximization or Grad-CAM to understand what features the model is learning
 
-5. **Analyze model performance**: After each training run, compare the evaluation results to understand how your changes impact the model's effectiveness across different skin tones.
+## 8. Making Predictions
 
-6. **Test with diverse images**: Use `predict.py` with a variety of images to assess the system's performance in real-world scenarios.
+Once the model's performance has improved:
 
-Remember to document your experiments, noting any changes made and their impacts on model performance. This will help guide further improvements to the project.
+1. Develop a prediction script (`predict.py`) to use the trained model on new images.
+2. Ensure the prediction process includes the same preprocessing steps used during training.
+3. Implement a user-friendly interface for making predictions, if desired.
 
-## Troubleshooting
+## 9. Iterative Improvement
 
-- If you encounter "module not found" errors, ensure your virtual environment is activated and all requirements are installed.
-- For CUDA-related errors, verify that your TensorFlow installation is compatible with your GPU drivers.
-- If you face memory issues during training, try reducing the `BATCH_SIZE` in `config.py`.
+Repeat steps 4-8 as necessary, making incremental improvements and re-evaluating performance until satisfactory results are achieved.
 
-For any other issues, refer to the documentation of the libraries used (TensorFlow, OpenCV, DeepGaze) or seek help in their respective community forums.
+Remember to document changes, findings, and results throughout the process. This will help in understanding what works best for your specific skin tone detection task.
