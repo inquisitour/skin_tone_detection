@@ -82,7 +82,6 @@ skin-tone-detection/
 │
 ├── data/               # Raw and processed data
 ├── models/             # CNN model architecture
-├── utils/              # Utility functions
 ├── config.py           # Configuration settings
 ├── train.py            # Training script
 ├── predict.py          # Prediction script
@@ -96,6 +95,27 @@ skin-tone-detection/
 2. **Feature Extraction & Classification**: Custom CNN model for skin tone classification
 3. **Post-processing**: Combining DeepGaze skin mask with CNN predictions for final output
 
+## 🔍 Current Results
+
+**Using EfficientNetB0 as the base model**
+
+1. Two-phase training: It first trains the model with a frozen base, then fine-tunes the top layers with a lower learning rate.
+2. Separate callbacks for each phase: This allows for saving the best model from each training phase.
+3. Comprehensive plotting: The training history plot now shows both training phases, with a vertical line separating them.
+4. Informative output: The script prints information about data shapes, training phases, and final accuracies.
+
+**Training History**
+
+<p align="center">
+  <img src="models/saved_models/training_history.png" alt="System Architecture" width="700">
+</p>
+
+**Confusion Matrix**
+
+<p align="center">
+  <img src="models/saved_models/confusion_matrix.png" alt="System Architecture" width="700">
+</p>
+
 ## 🤝 Contributing
 
 We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
@@ -107,4 +127,3 @@ Check out our [Improvement Plan](plan.md) for future enhancements!
 <p align="center">
   Made with ❤️ by the Gravitas AI Team
 </p>
-
