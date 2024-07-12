@@ -33,3 +33,4 @@
 */__pycache__/
 test.py
 "venv/" 
+data/processed/*.npy
