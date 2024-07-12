@@ -113,7 +113,7 @@ skin-tone-detection/
 **Confusion Matrix**
 
 <p align="center">
-  <img src="models/saved_models/confusion_matrix.png" alt="System Architecture" width="700" height="500">
+  <img src="models/saved_models/confusion_matrix.png" alt="System Architecture" width="700" height="400">
 </p>
 
 ## 🤝 Contributing
