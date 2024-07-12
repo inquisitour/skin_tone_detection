@@ -1,0 +1,19 @@
+{
+    "project_directory": "..",
+    "data_dir": "data",
+    "model_path": "models/saved_models/skin_tone_model.keras",
+    "config_file": "config.py",
+    "train_script": "train.py",
+    "predict_script": "predict.py",
+    "evaluate_script": "evaluate.py",
+    "test_data_path": "data/test_data",
+    "readme_file": "README.md",
+    "test_images": [
+        "audit/test_images/image1.jpg",
+        "audit/test_images/image2.jpg",
+        "audit/test_images/image3.jpg",
+        "audit/test_images/image4.jpg",
+        "audit/test_images/image5.jpg"
+    ],
+    "report_output": "audit/audit_report.json"
+}
