@@ -10,9 +10,6 @@
   <a href="https://github.com/inquisitour/skin_tone_detection/actions/workflows/imports.yml">
     <img src="https://img.shields.io/badge/imports-isort-1c91e6" alt="Imports: isort">
   </a>
-  <a href="https://github.com/inquisitour/skin_tone_detection/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/inquisitour/skin_tone_detection" alt="License">
-  </a>
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/python-3.7%2B-blue" alt="Python Version">
   </a>
